@@ -51,14 +51,14 @@ const data = {"id":"152098041","receivedAt":"2015-07-28T00:00:00.000Z","type":"0
 const geometry = {
   type: 'Point',
   coordinates: [ -84.414581, 33.769805 ],
-  properties:
-   { short: 'Atlanta',
-     full: 'Atlanta, GA, USA',
-     city: 'Atlanta',
-     county: 'Fulton County',
-     region: 'Georgia',
-     country: 'United States'
-   }
+  properties: {
+    short: 'Atlanta',
+    full: 'Atlanta, GA, USA',
+    city: 'Atlanta',
+    county: 'Fulton County',
+    region: 'Georgia',
+    country: 'United States'
+  }
 }
 
 let count = 0
