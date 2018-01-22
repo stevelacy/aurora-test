@@ -1,16 +1,21 @@
+const url = require('url')
 const Sequelize = require('sequelize')
 const QueryTypes = Sequelize.QueryTypes
 const uuid = require('uuid/v4')
 
-const database = process.env.DATABASE
-const user = process.env.USER
+const urlParts = url.parse(process.env.POSTGRES_URL)
+const authParts = urlParts.auth && urlParts.auth.split(':')
+
 const options = {
   dialect: 'postgres',
   native: false,
   typeValidation: true,
   port: 5432,
-  database,
-  user,
+  host: urlParts.hostname,
+  port: urlParts.port,
+  database: urlParts.pathname && urlParts.pathname.replace(/^\//, ''),
+  username: authParts && authParts[0],
+  password: authParts && authParts[1] && authParts.slice(1).join(':'),
   logging: false,
   pool: {
     max: 100,
@@ -31,7 +36,7 @@ connection.authenticate()
   .then(() => connection.databaseVersion())
   .then((ver) => {
     const { replication } = connection.options
-    console.log(replication, ver)
+    console.log('write:', !!replication.write, ver)
     return null
   })
   .catch((e) => console.error(e))
