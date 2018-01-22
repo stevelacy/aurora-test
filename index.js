@@ -84,7 +84,7 @@ async function createQueries() {
 
 function init() {
   createQueries()
-  if (count >= 100) return
+  if (count >= 10) return
   setInterval(init, 100)
 }
 
