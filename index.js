@@ -20,8 +20,8 @@ const options = {
     evict: 4000
   },
   replication: {
-    write: process.env.POSTGRES_URL || 'postgres://localhost:5432/' + database,
-    read: process.env.POSTGRES_REPLICAS || 'postgres://localhost:5432/' + database
+    write: process.env.POSTGRES_URL,
+    read: process.env.POSTGRES_REPLICAS
   }
 }
 
