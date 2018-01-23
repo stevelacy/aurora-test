@@ -18,11 +18,11 @@ const options = {
   password: authParts && authParts[1] && authParts.slice(1).join(':'),
   logging: false,
   pool: {
-    max: 100,
-    min: 1,
+    max: 10,
+    min: 0,
     acquire: 60000,
-    idle: 4000,
-    evict: 4000
+    idle: 10000,
+    evict: 10000
   },
   replication: {
     write: process.env.POSTGRES_URL,
