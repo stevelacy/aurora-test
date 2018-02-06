@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker build -t staeco/aurora-test .
+docker build -t stevelacy/aurora-test .
 
-docker push staeco/aurora-test
+docker push stevelacy/aurora-test
