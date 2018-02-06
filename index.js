@@ -20,9 +20,9 @@ const options = {
   pool: {
     max: 50,
     min: 10,
-    acquire: 10000,
-    idle: 10000,
-    evict: 10000
+    acquire: 1000,
+    idle: 1000,
+    evict: 1000
   },
   replication: {
     write: process.env.POSTGRES_URL,
