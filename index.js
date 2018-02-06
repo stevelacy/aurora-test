@@ -18,8 +18,8 @@ const options = {
   password: authParts && authParts[1] && authParts.slice(1).join(':'),
   logging: false,
   pool: {
-    max: 50,
-    min: 10,
+    max: 10,
+    min: 1,
     acquire: 60000,
     idle: 10000,
     evict: 10000
